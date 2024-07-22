@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
+        <style type="text/css">
+	body {
+		background-color: #000;
+		color: #fff;
+		padding: 0 5px;
+		font-family: 'Roboto', sans-serif;
+	}
+	h3 {
+		margin: 20px 0 10px 0;
+	}
+	p {
+		margin: 0;
+	}
+  .category {
+    display: none;
+  }
+</style>
+    </head>
+    <body>
+        <div class="category" id="cat_a" data-name="帮助">
+<h3>尊敬的用户，欢迎来到 Hirobox Cilent!</h3>
+            <p>Hirobox是一个修改Minecraft: PE的辅助工具.</p>
+            <h3>鼠标支持</h3>
+            <p>工具箱支持鼠标＆amp;键盘在Android 8及以上游玩.</p>
+            <h3>设备支持</h3>
+            <p>工具箱仅支持Android 8到Android 10，版本太高或太低都会导致错误</p>
+            <h3>存储目录</h3>
+            <p>详见压缩包内文件</p>
+            <h3>皮肤加载</h3>
+            <p>工具箱能够使用自定义几何形状加载皮肤包。使用外部存储位置，并将皮肤包装放入games/com.mojang/minecraftpe/skin_packs的内部存储中</p>
+            <h3>材质包资源</h3>
+            <p>工具箱可以加载自定义材质。请使用外部存储位置，并将资源包解压成文件夹，放入games/com.mojang/resource_packs/的内部存储中</p>
+            <h3>资源包跳过</h3>
+            <p>使用工具箱加入服务器时，您可以跳过强制资源包.</p>
+            <h3>配置问题</h3>
+            <p>基本上想到的配置都放在json里面了，您也可以自己调节配置</p>
+            <h3>关于加群</h3>
+            <p>热知识:点击QQ图标的按钮可以<a href="http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=Nt0PIeTd6gyNNt0bCmXlwWvFitGPSQEC&authKey=IrEG04tVknka5%2F991LfoDvKpmEUHrNIZFZp1j77kHytTJCkkBAl9fTqUkFm4F%2B%2BP&noverify=0&group_code=685366187">加群</a></p>
+            <p>作者只在B站有账号，B站名称<a href="https://m.bilibili.com/space/1450577972?plat_id=1&share_from=space&share_medium=android&share_plat=android&share_session_id=503900d1-36e8-46a5-b469-d8d4780d63b1&share_source=COPY&share_tag=s_i&timestamp=1684632755&unique_k=dmXnuw9">-L_Hiro-</a>，但是如果你觉得这个软件还不错，你可以把它分享出去，我会非常感谢你的(〃ﾉωﾉ)</p>
+        </div>
+        <div class="help" id="cat_b" data-name="Help">
+            <h3>Dear user, welcome to Hirobox Cilent!</h3>
+            <p>Hirobox is an auxiliary tool for modifying Minecraft: PE.</p>
+            <h3>Mouse support</h3>
+            <p>Toolbox supports mouse & keyboard play on Android 8 and above.</p>
+            <h3>Device support</h3>
+            <p>The toolbox only supports Android 8 to Android 10, and a version that is too high or too low will cause errors.</p>
+            <h3>storage directory</h3>
+            <p>See the files in the compressed package for details.</p>
+            <h3>Skin loading</h3>
+            <p>The toolbox has the ability to load skin packs with custom geometries. Use an external storage location and put the skin packs into the internal storage at games/com.mojang/minecraftpe/skin_packs</p>
+            <h3>Texture pack resources</h3>
+            <p>The toolbox can load custom materials. Please use an external storage location, unzip the resource pack into a folder, and put it into the internal storage of games/com.mojang/resource_packs/</p>
+            <h3>Resource pack skipped</h3>
+            <p>You can skip mandatory resource packs when joining a server using the toolbox.</p>
+            <h3>Configuration issues</h3>
+            <p>Basically the configuration is placed in json, you can also adjust the configuration yourself</p>
+            <h3>About us</h3>
+            <p>Join to my<a href="http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=Nt0PIeTd6gyNNt0bCmXlwWvFitGPSQEC&authKey=IrEG04tVknka5%2F991LfoDvKpmEUHrNIZFZp1j77kHytTJCkkBAl9fTqUkFm4F%2B%2BP&noverify=0&group_code=685366187">QQGroup</a></p>
+            <p>Subscribe to my<a href="https://m.bilibili.com/space/1450577972?plat_id=1&share_from=space&share_medium=android&share_plat=android&share_session_id=503900d1-36e8-46a5-b469-d8d4780d63b1&share_source=COPY&share_tag=s_i&timestamp=1684632755&unique_k=dmXnuw9"> Bilibili account</a>, but if you think this software is not bad, you can share it, I will thank you very much(〃ﾉωﾉ)</p>
+        </div>
+        <script>
+(function() {
+
+var CATEGORIES = ["a", "b"];
+
+var categoryDOM = [];
+var categoryNames = [];
+for (var i = 0; i < CATEGORIES.length; i++) {
+  var el = document.getElementById("cat_" + CATEGORIES[i]);
+  categoryDOM.push(el);
+  categoryNames.push(el.dataset.name);
+}
+var currentCategory = null;
+function setActiveCategory(cat) {
+  if (currentCategory !== null)
+    currentCategory.style.display = "";
+  currentCategory = cat;
+  cat.style.display = "block";
+}
+setActiveCategory(categoryDOM[0]);
+window.setActiveCategory = function (index) {
+  setActiveCategory(categoryDOM[index]);
+};
+ToolboxHelp.registerCategories(CATEGORIES, categoryNames);
+
+})();
+</script>
+    </body>
+</html>
